@@ -39,11 +39,11 @@ class DiagnosticsModule(CommsModule, LoggerModule):
         super().boot()
 
 
-class Robot(PowerModule, SafetyModule, DiagnosticsModule):
+class Robot(SafetyModule, PowerModule, DiagnosticsModule):
     pass
 
 
-print("\n=== RUN 2 (зламаний super) ===")
+print("\n=== RUN 3 (інший порядок) ===")
 r = Robot()
 r.boot()
 
