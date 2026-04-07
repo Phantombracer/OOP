@@ -24,7 +24,7 @@ class CommsModule(Core):
 class LoggerModule(Core):
     def boot(self):
         print("LoggerModule boot")
-        super().boot()
+        Core.boot(self)
 
 
 class SafetyModule(SensorsModule, LoggerModule):
@@ -43,8 +43,8 @@ class Robot(PowerModule, SafetyModule, DiagnosticsModule):
     pass
 
 
+print("\n=== RUN 2 (зламаний super) ===")
 r = Robot()
-print("=== RUN 1 ===")
 r.boot()
 
 print("\nMRO:")
